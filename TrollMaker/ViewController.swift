@@ -128,7 +128,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func save(trollImage: UIImage){
-        let troll = Troll(textTop: topField.text!, textBottom: bottomField.text!, imageOriginal: selectedImage.image!, editedImage: trollImage)
+        _ = Troll(textTop: topField.text!, textBottom: bottomField.text!, imageOriginal: selectedImage.image!, editedImage: trollImage)
     
     }
     

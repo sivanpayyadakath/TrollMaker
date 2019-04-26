@@ -46,7 +46,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ZZo-RT-dl2"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -56,7 +55,6 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="rQ0-gF-MCT"/>
                                 </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
