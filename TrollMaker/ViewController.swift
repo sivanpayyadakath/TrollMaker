@@ -8,6 +8,14 @@
 
 import UIKit
 
+struct Troll {
+    var textTop: String = "TOP"
+    var textBottom: String = "BOTTOM"
+    var imageOriginal: UIImage?
+    var editedImage: UIImage?
+    
+}
+
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     
@@ -16,6 +24,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var cameraImagePicker: UIBarButtonItem!
     @IBOutlet weak var topField: UITextField!
     @IBOutlet weak var bottomField: UITextField!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     let trollTextAttribute: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
@@ -78,6 +87,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         present(pickerController, animated: true, completion: nil)
     }
     
+    @IBAction func photoShare(_ sender: Any) {
+        let trollImage = generateTrollImage()
+        let controller = UIActivityViewController(activityItems: [trollImage], applicationActivities: nil)
+        controller.popoverPresentationController?.sourceView = self.view //so that ipdas wont crash
+        
+        self.present(controller, animated: true, completion: nil)
+    }
     
     @IBAction func cameraPhotoPicked(_ sender: Any) {
         let pickerController = UIImagePickerController()
@@ -110,6 +126,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         print("nigga cancelled selection")
         dismiss(animated: true, completion: nil)
     }
+    
+    func save(trollImage: UIImage){
+        let troll = Troll(textTop: topField.text!, textBottom: bottomField.text!, imageOriginal: selectedImage.image!, editedImage: trollImage)
+    
+    }
+    
+    func generateTrollImage() -> UIImage {
+            //Render view to image (screenshots)
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let trollImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        
+        return trollImage
+        
+    }
+    
+    
     
 }
 

@@ -60,6 +60,20 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Mc-R4-5TF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="RO0-6F-WLA">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="reply" id="KEw-m1-Ips">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="photoShare:" destination="BYZ-38-t0r" id="B5y-cF-39b"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -84,6 +98,7 @@
                         <outlet property="cameraImagePicker" destination="FJR-Jm-hNx" id="OpX-Cb-Ko3"/>
                         <outlet property="imagePicker" destination="dOb-3n-gkW" id="zi5-U9-Lhk"/>
                         <outlet property="selectedImage" destination="OeD-22-ohu" id="Qho-9f-w5l"/>
+                        <outlet property="shareButton" destination="KEw-m1-Ips" id="BbK-he-jVR"/>
                         <outlet property="topField" destination="ByY-Ez-04K" id="8bs-1J-Iib"/>
                     </connections>
                 </viewController>

@@ -34,6 +34,14 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs permission to access photos on your device</string>
+	<key>CFBundleDisplayName</key>
+	<string></string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string></string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
