@@ -25,6 +25,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var topField: UITextField!
     @IBOutlet weak var bottomField: UITextField!
     @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var toolbarBottom: UIToolbar!
+    @IBOutlet weak var trollMaker: UILabel!
+    @IBOutlet weak var pickbutton: UIButton!
     
     let trollTextAttribute: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
@@ -85,6 +88,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         pickerController.delegate = self
         pickerController.sourceType = .photoLibrary
         present(pickerController, animated: true, completion: nil)
+        trollMaker.isHidden = true
+        pickbutton.isHidden = true
     }
     
     @IBAction func photoShare(_ sender: Any) {
@@ -100,6 +105,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         pickerController.delegate = self
         pickerController.sourceType = .camera
         present(pickerController, animated: true, completion: nil)
+        trollMaker.isHidden = true
+        trollMaker.isHidden = true
+        pickbutton.isHidden = true
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -133,11 +141,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func generateTrollImage() -> UIImage {
-            //Render view to image (screenshots)
+        //hide toolbar
+        toolbarBottom.isHidden = true
+        //Render view to image (screenshots)
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let trollImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
+        //show toolbar
+        toolbarBottom.isHidden = false
         
         return trollImage
         
